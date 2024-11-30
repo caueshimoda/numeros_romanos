@@ -4,15 +4,14 @@
 void converte (char strinvert[], int n) {
 	char menor[] = {'I', 'X', 'C', 'M', 'X', 'C', 'M'};
 	char maior[]= {'V', 'L', 'D', 'V', 'L', 'D'};
-	int i = 0, divisor = 1, controle = 0, resto, resto2, o, p, q, j;
+	int i = 0, divisor = 1, controle = 0, resto, resto2, p, q, j;
 	while (divisor <= n) {
 		divisor *= 10;
 		resto = n % divisor;
 		if (resto) {
 			p = divisor / 10;
-			o = resto / p;
 			q = 4 * p;
-			resto2 = o % 5;
+			resto2 = resto / p % 5;
 			if (i == 3 && resto >= 4000) {
 				menor[i] = 'I';
 			}
