@@ -108,14 +108,15 @@ void converte (char strinvert[], int n) {
 int main() {
 	char s[20];
 	int num = 0;
-	printf("Este programa converte um n\243mero inteiro entre 1 e 1 milh\706o para n\243meros romanos.\nDigite um n\243mero inteiro entre 1 e 1.000.000: ");
-	scanf("%d", &num);
-	if (num < 1 || num > 1000000) printf("Input inv\240lido.");
-	else{
-		converte(s, num);
-		printf("%s", s);	
-	}
+	do {
+		printf("Este programa converte um n\243mero inteiro entre 1 e 1 milh\706o para n\243meros romanos.\nDigite um n\243mero inteiro entre 1 e 1.000.000: ");
+		scanf("%d", &num);
+		scanf("%*[^\n]");scanf("%*c"); // Limpa buffer
+	} while (num < 1 || num > 1000000);
+	converte(s, num);
+	printf("%s", s);	
 	return 0;
 }
+
 
 
